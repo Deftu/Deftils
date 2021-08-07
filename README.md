@@ -26,6 +26,13 @@ Mango's group is `xyz.matthewtgm`, it's artifact name is `Mango` and the version
 
 ### Gradle:
 ```gradle
+repositories {
+    maven {
+        name = "JitPack"
+        url = "https://jitpack.io/"
+    }
+}
+
 dependencies {
     api('xyz.matthewtgm:Mango:1.0')
 }
