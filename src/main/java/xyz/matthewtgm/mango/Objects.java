@@ -9,7 +9,7 @@ public class Objects {
      * @return The stringified object.
      */
     public static String stringify(@Nullable Object o) {
-        return o == null ? "" : java.util.Objects.toString(o);
+        return o == null ? "" : String.valueOf(o);
     }
 
 }
