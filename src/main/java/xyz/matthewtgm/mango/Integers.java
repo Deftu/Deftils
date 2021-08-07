@@ -4,7 +4,7 @@ import lombok.Getter;
 
 import java.util.Random;
 
-public class IntegerHelper {
+public class Integers {
 
     @Getter private static final Random random = new Random();
 

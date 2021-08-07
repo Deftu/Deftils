@@ -4,7 +4,7 @@ import java.net.HttpURLConnection;
 import java.net.URI;
 import java.net.URL;
 
-public class ApiHelper {
+public class APIs {
 
     /**
      * Fetches a string from the internet.
@@ -18,7 +18,7 @@ public class ApiHelper {
             conn.setRequestMethod("GET");
             conn.setUseCaches(false);
             if (conn.getResponseCode() == HttpURLConnection.HTTP_OK)
-                return IOHelper.toString(conn.getInputStream());
+                return IO.toString(conn.getInputStream());
             return "";
         } catch (Exception e) {
             e.printStackTrace();
@@ -29,7 +29,7 @@ public class ApiHelper {
     /**
      * Fetches a string from the internet.
      *
-     * @param url The url to fetch from.
+     * @param uri The url to fetch from.
      * @return The string fetched.
      */
     public static String fetch(URI uri) {

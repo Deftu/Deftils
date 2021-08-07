@@ -2,7 +2,24 @@ package xyz.matthewtgm.mango;
 
 import java.util.Iterator;
 
-public class StringHelper {
+public class Strings {
+
+    /**
+     * @param string The string to check.
+     * @return Whether the string is empty or null.
+     */
+    public static boolean isNullOrEmpty(String string) {
+        return string == null || string.isEmpty();
+    }
+
+    /**
+     * @param prefix The prefix to prepend.
+     * @param string The string to prepend to.
+     * @return The modified string.
+     */
+    public static String prepend(String prefix, String string) {
+        return prefix + string;
+    }
 
     /**
      * @param strings The list of Objects to check.
@@ -12,7 +29,7 @@ public class StringHelper {
         String longestString = "";
         int longest = 0;
         for (Object o : strings) {
-            String string = ObjectHelper.stringify(o);
+            String string = Objects.stringify(o);
             if (string.length() > longest) {
                 longestString = string;
                 longest = string.length();
@@ -47,7 +64,7 @@ public class StringHelper {
             return "";
         Object first = iterator.next();
         if (!iterator.hasNext())
-            return ObjectHelper.stringify(first);
+            return Objects.stringify(first);
         StringBuilder buf = new StringBuilder();
         if (first != null)
             buf.append(first);

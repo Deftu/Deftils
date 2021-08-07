@@ -5,7 +5,7 @@ import xyz.matthewtgm.mango.writers.StringBuilderWriter;
 import java.io.*;
 import java.nio.charset.Charset;
 
-public class IOHelper {
+public class IO {
 
     private static final int EOF = -1;
     private static final int DEFAULT_BUFFER_SIZE = 1024 * 4;
