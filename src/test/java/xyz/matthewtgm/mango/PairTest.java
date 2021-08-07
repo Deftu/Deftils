@@ -24,8 +24,6 @@ public class PairTest {
     public void immutable() {
         Pair<String, String> stringPair = new ImmutablePair<>("immutable", "also immutable");
         System.out.println(stringPair.left() + " | " + stringPair.right());
-        stringPair.first("mutable");
-        System.out.println(stringPair.key() + " | " + stringPair.value());
     }
 
 }
