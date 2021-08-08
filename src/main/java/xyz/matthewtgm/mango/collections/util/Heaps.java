@@ -1,7 +1,11 @@
 package xyz.matthewtgm.mango.collections.util;
 
+import xyz.matthewtgm.mango.collections.Heap;
 import xyz.matthewtgm.mango.collections.impl.AdvancedHeap;
 import xyz.matthewtgm.mango.collections.impl.SimpleHeap;
+
+import java.util.Collection;
+import java.util.Collections;
 
 public class Heaps {
 
@@ -9,8 +13,22 @@ public class Heaps {
         return new SimpleHeap<>();
     }
 
-    public static <T>AdvancedHeap<T> newAdvancedHeap() {
+    public static <T> AdvancedHeap<T> newAdvancedHeap() {
         return new AdvancedHeap<>();
+    }
+
+    public static <T> Collection<T> populateCollection(Heap<T> heap, Collection<T> collection) {
+        for (T t : heap) {
+            collection.add(t);
+        }
+        return collection;
+    }
+
+    public static <T> Collection<T> toCollection(Heap<T> heap) {
+        Collection<T> collection = Collections.EMPTY_LIST;
+        for (T t : heap)
+            collection.add(t);
+        return collection;
     }
 
 }

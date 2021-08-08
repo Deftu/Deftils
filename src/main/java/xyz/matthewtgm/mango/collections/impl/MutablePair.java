@@ -1,28 +1,8 @@
 package xyz.matthewtgm.mango.collections.impl;
 
-import xyz.matthewtgm.mango.collections.Pair;
+import xyz.matthewtgm.mango.collections.abstraction.AbstractPair;
 
-public class MutablePair<L, R> implements Pair<L, R> {
-
-    private L left;
-    private R right;
-
-    public MutablePair(L left, R right) {
-        this.left = left;
-        this.right = right;
-    }
-
-    public MutablePair() {
-        this(null, null);
-    }
-
-    public L left() {
-        return left;
-    }
-
-    public R right() {
-        return right;
-    }
+public class MutablePair<L, R> extends AbstractPair<L, R> {
 
     public void left(L left) {
         this.left = left;

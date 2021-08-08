@@ -2,7 +2,7 @@ package xyz.matthewtgm.mango;
 
 public class MangoVersion {
 
-    public static final MangoVersion CURRENT = new MangoVersion(1, 0 ,0);
+    public static final MangoVersion CURRENT = new MangoVersion(1, 1, 0);
 
     public final int major;
     public final int minor;

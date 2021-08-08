@@ -10,7 +10,7 @@ public class PairTest {
 
     @Test
     @DisplayName("Tests of MutablePairs")
-    public void mutable() {
+    public void mutable(){
         Pair<String, String> stringPair = new MutablePair<>();
         System.out.println(stringPair.left() + " | " + stringPair.right());
         stringPair.first("mutable");

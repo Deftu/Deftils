@@ -1,23 +1,11 @@
 package xyz.matthewtgm.mango.collections.impl;
 
-import xyz.matthewtgm.mango.collections.Pair;
+import xyz.matthewtgm.mango.collections.abstraction.AbstractPair;
 
-public class ImmutablePair<L, R> implements Pair<L, R> {
-
-    private final L left;
-    private final R right;
+public class ImmutablePair<L, R> extends AbstractPair<L, R> {
 
     public ImmutablePair(L left, R right) {
-        this.left = left;
-        this.right = right;
-    }
-
-    public L left() {
-        return left;
-    }
-
-    public R right() {
-        return right;
+        super(left, right);
     }
 
 }

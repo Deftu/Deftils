@@ -1,8 +1,22 @@
 package xyz.matthewtgm.mango;
 
+import lombok.Getter;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
+import java.util.List;
 
 public class Strings {
+
+    @Getter private static final List<String> questions = Arrays.asList(
+            "what",
+            "why",
+            "when",
+            "who",
+            "where",
+            "how"
+    );
 
     /**
      * @param string The string to check.
@@ -19,6 +33,31 @@ public class Strings {
      */
     public static String prepend(String prefix, String string) {
         return prefix + string;
+    }
+
+    /**
+     * Capitalizes the first letter in the input.
+     *
+     * @param input The input string.
+     * @return The capitalized input.
+     */
+    public static String capitalize(String input) {
+        return Character.toString(input.charAt(0)).toUpperCase() + input.substring(1);
+    }
+
+    /**
+     * Adds the appropriate punctuation mark at the end of a string, only supports a limited number of question works.
+     *
+     * @param input The input string.
+     * @return The punctuated input.
+     */
+    public static String punctuate(String input) {
+        String mark = ".";
+        if (input.contains(" ") && questions.contains(input.substring(0, input.indexOf(" ")).toLowerCase()))
+            mark = "?";
+        if (!input.endsWith(mark))
+            input = input + mark;
+        return input;
     }
 
     /**

@@ -1,6 +1,8 @@
 package xyz.matthewtgm.mango.collections;
 
-public interface Heap<T> {
+import java.util.Collection;
+
+public interface Heap<T> extends Iterable<T> {
 
     /**
      * Adds a new element to this heap.
@@ -8,6 +10,18 @@ public interface Heap<T> {
      * @param element The element to be added.
      */
     void push(T element);
+
+    default void populate(Heap<T> heap) {
+        for (T t : heap) {
+            push(t);
+        }
+    }
+
+    default void populate(T[] elements) {
+        for (T element : elements) {
+            push(element);
+        }
+    }
 
     /**
      * Removes and returns the top of the stack.
@@ -41,8 +55,9 @@ public interface Heap<T> {
         throw new UnsupportedOperationException("This Heap does not support peeks!");
     }
 
-    default T first() {
-        return peek(0);
-    }
+    /**
+     * @return The first element in this heap.
+     */
+    T first();
 
 }

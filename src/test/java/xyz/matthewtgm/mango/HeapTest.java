@@ -14,11 +14,16 @@ public class HeapTest {
         Heap<String> heap = new SimpleHeap<>();
         heap.push("hello");
         heap.push("world!");
-        System.out.println(heap.first());
-        System.out.println(heap.isEmpty());
-        System.out.println(heap.pop());
-        System.out.println(heap.pop());
-        System.out.println(heap.isEmpty());
+
+        for (String part : heap) {
+            System.out.println("For: " + part);
+        }
+
+        System.out.println("First: " + heap.first());
+        System.out.println("isEmpty: " + heap.isEmpty());
+        System.out.println("Pop: " + heap.pop());
+        System.out.println("Pop 2: " + heap.pop());
+        System.out.println("isEmpty 2: " + heap.isEmpty());
     }
 
     @Test
@@ -27,12 +32,17 @@ public class HeapTest {
         Heap<String> heap = new AdvancedHeap<>();
         heap.push("hello");
         heap.push("world!");
-        System.out.println(heap.first());
-        System.out.println(heap.isEmpty());
-        System.out.println(heap.peek(1));
-        System.out.println(heap.pop());
-        System.out.println(heap.pop());
-        System.out.println(heap.isEmpty());
+
+        for (String part : heap) {
+            System.out.println("For: " + part);
+        }
+
+        System.out.println("First: " + heap.first());
+        System.out.println("isEmpty: " + heap.isEmpty());
+        System.out.println("Peeked: " + heap.peek(1));
+        System.out.println("Pop: " + heap.pop());
+        System.out.println("Pop 2: " + heap.pop());
+        System.out.println("isEmpty 2: " + heap.isEmpty());
     }
 
 }
