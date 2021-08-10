@@ -1,5 +1,7 @@
 package xyz.matthewtgm.mango;
 
+import xyz.matthewtgm.mango.annotations.Beta;
+
 import java.awt.*;
 
 public class Colours {
@@ -18,6 +20,7 @@ public class Colours {
      * @param rgb The RGB colour.
      * @return The created {@link Color}.
      */
+    @Beta
     public static Color create(int rgb) {
         return new Color(rgb);
     }
@@ -30,6 +33,7 @@ public class Colours {
      * @param blue The blue of the colour.
      * @return The created {@link Color}.
      */
+    @Beta
     public static Color create(int red, int green, int blue) {
         return new Color(red, green, blue);
     }
@@ -43,6 +47,7 @@ public class Colours {
      * @param alpha The alpha value of the colour.
      * @return The created {@link Color}.
      */
+    @Beta
     public static Color create(int red, int green, int blue, int alpha) {
         return new Color(red, green, blue, alpha);
     }

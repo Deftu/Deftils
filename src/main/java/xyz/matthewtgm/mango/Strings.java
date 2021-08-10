@@ -1,6 +1,7 @@
 package xyz.matthewtgm.mango;
 
 import lombok.Getter;
+import xyz.matthewtgm.mango.annotations.Unfinished;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -47,10 +48,13 @@ public class Strings {
 
     /**
      * Adds the appropriate punctuation mark at the end of a string, only supports a limited number of question works.
+     * 
+     * <b>CURRENTLY SEMI-USABLE.</b>
      *
      * @param input The input string.
      * @return The punctuated input.
      */
+    @Unfinished
     public static String punctuate(String input) {
         String mark = ".";
         if (input.contains(" ") && questions.contains(input.substring(0, input.indexOf(" ")).toLowerCase()))
