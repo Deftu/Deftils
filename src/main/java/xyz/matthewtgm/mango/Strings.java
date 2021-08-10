@@ -48,7 +48,7 @@ public class Strings {
 
     /**
      * Adds the appropriate punctuation mark at the end of a string, only supports a limited number of question works.
-     * 
+     *
      * <b>CURRENTLY SEMI-USABLE.</b>
      *
      * @param input The input string.
