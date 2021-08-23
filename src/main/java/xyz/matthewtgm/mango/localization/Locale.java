@@ -1,7 +1,6 @@
 package xyz.matthewtgm.mango.localization;
 
 import xyz.matthewtgm.mango.IO;
-import xyz.matthewtgm.mango.Lists;
 import xyz.matthewtgm.mango.Maps;
 import xyz.matthewtgm.mango.Objects;
 
@@ -14,17 +13,19 @@ public class Locale {
 
     private final Map<String, String> translations = Maps.newHashMap();
 
-    public void load(InputStream stream) throws IOException {
+    public Locale load(InputStream stream) throws IOException {
         Objects.notNull(stream, "Input");
 
         for (String line : IO.readLines(stream, StandardCharsets.UTF_8)) {
-            if (!line.isEmpty() && line.charAt(0) != '#') {
+            if (!line.isEmpty() && (line.charAt(0) != '#' || line.charAt(0) == '/' && line.charAt(1) == '/')) {
                 String[] split = line.trim().split("=");
                 if (split.length < 1)
                     continue;
                 translations.put(split[0], split[1]);
             }
         }
+
+        return this;
     }
 
     private String translate(String input) {

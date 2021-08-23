@@ -16,8 +16,7 @@ public class Localization {
     }
 
     public static void setLocale(InputStream stream) throws IOException {
-        Localization.locale = new Locale();
-        Localization.locale.load(stream);
+        Localization.locale = new Locale().load(stream);
     }
 
 }
