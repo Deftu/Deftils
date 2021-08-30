@@ -1,13 +1,12 @@
 package xyz.matthewtgm.mango;
 
-import lombok.Getter;
 import xyz.matthewtgm.mango.data.Vec3;
 
 import java.util.Random;
 
 public class Numbers {
 
-    @Getter private static final Random random = new Random();
+    private static final Random random = new Random();
 
     /**
      * Returns the distance between the two vectors.
@@ -168,6 +167,10 @@ public class Numbers {
      */
     public static boolean isNegative(long number) {
         return number < 0;
+    }
+
+    public static Random getRandom() {
+        return random;
     }
 
 }

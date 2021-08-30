@@ -1,7 +1,5 @@
 package xyz.matthewtgm.mango.collections;
 
-import java.util.Collection;
-
 public interface Heap<T> extends Iterable<T> {
 
     /**

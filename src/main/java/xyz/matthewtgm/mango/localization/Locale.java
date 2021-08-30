@@ -12,6 +12,7 @@ import java.util.Map;
 public class Locale {
 
     private final Map<String, String> translations = Maps.newHashMap();
+    private InputStream inputStream;
 
     public Locale load(InputStream stream) throws IOException {
         Objects.notNull(stream, "Input");
@@ -25,6 +26,7 @@ public class Locale {
             }
         }
 
+        this.inputStream = stream;
         return this;
     }
 
@@ -43,6 +45,14 @@ public class Locale {
         }
 
         return translated;
+    }
+
+    public Map<String, String> getTranslations() {
+        return translations;
+    }
+
+    public InputStream getInputStream() {
+        return inputStream;
     }
 
 }

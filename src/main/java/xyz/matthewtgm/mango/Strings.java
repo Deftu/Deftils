@@ -1,16 +1,14 @@
 package xyz.matthewtgm.mango;
 
-import lombok.Getter;
 import xyz.matthewtgm.mango.annotations.Unfinished;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
 public class Strings {
 
-    @Getter private static final List<String> questions = Arrays.asList(
+    private static final List<String> questions = Arrays.asList(
             "what",
             "why",
             "when",
@@ -119,6 +117,10 @@ public class Strings {
                 buf.append(obj);
         }
         return buf.toString();
+    }
+
+    public static List<String> getQuestions() {
+        return questions;
     }
 
 }

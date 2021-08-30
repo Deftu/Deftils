@@ -7,9 +7,9 @@ public class LocalizationTest {
 
     @Test
     public void loading() throws Exception {
-        Localization.setLocale(ClassLoader.getSystemClassLoader().getResourceAsStream("en_US.lang"));
-
-        System.out.println("Hello, " + Localization.format("epic.gaming"));
+        Localization localization = new Localization();
+        localization.setLocale(ClassLoader.getSystemClassLoader().getResourceAsStream("en_US.lang"));
+        System.out.println("Hello, " + localization.format("epic.gaming"));
     }
 
 }
