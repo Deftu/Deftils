@@ -13,14 +13,14 @@ Mango provides new collection types and utility classes. To put it in short, it'
 Once a class or method has been deprecated, a label will be added indicating when it was deprecated in the version timeline. The feature will most likely be removed within the next 3-5 updates.
 
 ## Adding Mango to your project.
-Mango's group is `xyz.matthewtgm`, it's artifact name is `Mango` and the version is dependant on the latest release's tag.
+Mango's group is `xyz.deftu`, it's artifact name is `Mango` and the version is dependant on the latest release's tag.
 
 ### Maven:
 ```xml
 <dependency>
-    <groupId>xyz.matthewtgm</groupId>
+    <groupId>xyz.deftu</groupId>
     <artifactId>Mango</artifactId>
-    <version>1.0</version>
+    <version>VERSION</version>
 </dependency>
 ```
 
@@ -34,6 +34,6 @@ repositories {
 }
 
 dependencies {
-    api('xyz.matthewtgm:Mango:1.0')
+    api('xyz.deftu:Mango:VERSION')
 }
 ```
