@@ -31,6 +31,10 @@ public abstract class AbstractHeap<T> implements Heap<T> {
         return list.get(0);
     }
 
+    public List<? super T> asList() {
+        return list;
+    }
+
     @NotNull
     public Iterator<T> iterator() {
         return list.iterator();

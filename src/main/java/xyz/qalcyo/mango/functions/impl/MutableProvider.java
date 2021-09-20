@@ -12,8 +12,4 @@ public class MutableProvider<T> extends AbstractProvider<T> {
         this(null);
     }
 
-    public static MutableProvider<?> empty() {
-        return new MutableProvider<>();
-    }
-
 }

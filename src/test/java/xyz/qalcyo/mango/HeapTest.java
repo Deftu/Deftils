@@ -27,7 +27,6 @@ public class HeapTest {
     }
 
     @Test
-    @DisplayName("Test of AdvancedHeaps")
     public void advanced() {
         Heap<String> heap = new AdvancedHeap<>();
         heap.push("hello");

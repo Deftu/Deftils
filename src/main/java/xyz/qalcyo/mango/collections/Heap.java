@@ -1,5 +1,7 @@
 package xyz.qalcyo.mango.collections;
 
+import java.util.List;
+
 public interface Heap<T> extends Iterable<T> {
 
     /**
@@ -57,5 +59,7 @@ public interface Heap<T> extends Iterable<T> {
      * @return The first element in this heap.
      */
     T first();
+
+    List<? super T> asList();
 
 }

@@ -1,5 +1,11 @@
 package xyz.qalcyo.mango.collections;
 
+import xyz.qalcyo.mango.collections.impl.ImmutablePair;
+import xyz.qalcyo.mango.collections.impl.MutablePair;
+
+import java.util.AbstractMap;
+import java.util.Map;
+
 /**
  * Stores a pair of two types.
  *
@@ -7,6 +13,14 @@ package xyz.qalcyo.mango.collections;
  * @param <R> The type on the right side.
  */
 public interface Pair<L, R> {
+
+    default boolean isMutable() {
+        return this instanceof MutablePair;
+    }
+
+    default boolean isImmutable() {
+        return !isMutable();
+    }
 
     /**
      * @return The left element in this pair.
@@ -98,6 +112,26 @@ public interface Pair<L, R> {
      */
     default void value(R value) {
         right(value);
+    }
+
+    default Map.Entry<L, R> asEntry() {
+        return isMutable() ? new AbstractMap.SimpleEntry<>(left(), right()) : new AbstractMap.SimpleImmutableEntry<>(left(), right());
+    }
+
+    static <L, R> Pair<L, R> empty(boolean immutable) {
+        return immutable ? new ImmutablePair<>(null, null) : new MutablePair<>();
+    }
+
+    static <L, R> Pair<L, R> empty() {
+        return empty(false);
+    }
+
+    static <L, R> Pair<L, R> of(boolean immutable, L left, R right) {
+        return immutable ? new ImmutablePair<>(left, right) : new MutablePair<>(left, right);
+    }
+
+    static <L, R> Pair<L, R> of(L left, R right) {
+        return of(false, left, right);
     }
 
 }

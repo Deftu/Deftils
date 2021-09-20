@@ -12,8 +12,4 @@ public class ImmutableProvider<T> extends AbstractProvider<T> {
         throw new UnsupportedOperationException("Provider is immutable, cannot be modified.");
     }
 
-    public static ImmutableProvider<?> empty() {
-        return new ImmutableProvider<>(null);
-    }
-
 }

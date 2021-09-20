@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 public class NumbersTest {
 
     @Test
-    @DisplayName("Randomization test")
     public void randomization() {
         System.out.println("Integers:");
         System.out.println(Numbers.isPositive(10));

@@ -32,4 +32,18 @@ public class ProviderTest {
         System.out.println(provider.get());
     }
 
+    @Test
+    public void mutableOf() {
+        Provider<String> provider = Provider.of("Mutable.");
+        System.out.println(provider);
+        System.out.println(provider.get());
+
+        provider.set("Hello, World!");
+        System.out.println(provider);
+        System.out.println(provider.get());
+
+        provider.set(null);
+        System.out.println(provider.or("Null provider."));
+    }
+
 }
