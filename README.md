@@ -13,12 +13,12 @@ Mango provides new collection types and utility classes. To put it in short, it'
 Once a class or method has been deprecated, a label will be added indicating when it was deprecated in the version timeline. The feature will most likely be removed within the next 3-5 updates.
 
 ## Adding Mango to your project.
-Mango's group is `xyz.deftu`, it's artifact name is `Mango` and the version is dependant on the latest release's tag.
+Mango's group is `xyz.qalcyo.mango`, it's artifact name is `Mango` and the version is dependant on the latest release's tag.
 
 ### Maven:
 ```xml
 <dependency>
-    <groupId>xyz.deftu</groupId>
+    <groupId>xyz.qalcyo.mango</groupId>
     <artifactId>Mango</artifactId>
     <version>VERSION</version>
 </dependency>
@@ -28,12 +28,12 @@ Mango's group is `xyz.deftu`, it's artifact name is `Mango` and the version is d
 ```gradle
 repositories {
     maven {
-        name = "JitPack"
-        url = "https://jitpack.io/"
+        name = "Qalcyo"
+        url = "http://maven.deftu.xyz/repository/maven-public/"
     }
 }
 
 dependencies {
-    api('xyz.deftu:Mango:VERSION')
+    api('xyz.qalcyo.mango:Mango:VERSION')
 }
 ```
