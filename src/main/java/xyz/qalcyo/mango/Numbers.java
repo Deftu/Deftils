@@ -71,7 +71,7 @@ public class Numbers {
      * @param x The vector
      * @return The normalised vector as a triplet
      */
-    public static MutableTriplet<Float, Float, Float> crossProduct(Vec3 x) {
+    public static MutableTriplet<Float, Float, Float> normaliseVec3(Vec3 x) {
         float xn = normaliseInteger(x.getX());
         float yn = normaliseInteger(x.getY());
         float zn = normaliseInteger(x.getZ());
