@@ -1,5 +1,6 @@
 package xyz.qalcyo.mango;
 
+import xyz.qalcyo.mango.collections.impl.MutableTriplet;
 import xyz.qalcyo.mango.data.Vec3;
 
 import java.util.Random;
@@ -39,6 +40,52 @@ public class Numbers {
      */
     public static double getDistanceBetween(Vec3 first, Vec3 second) {
         return getDistanceBetween(first, second, false);
+    }
+
+    /**
+     * Calculates the dot product between two vectors
+     * @param first The first vector
+     * @param second The second vector
+     * @return The (scalar) dot product of both vectors
+     */
+    public static int dotProduct(Vec3 first, Vec3 second) {
+        return (first.getX() * second.getX()) + (first.getY() * second.getY()) + (first.getZ() + second.getZ());
+    }
+
+    /**
+     * Calculates the cross product between two vectors
+     * @param first The first vector
+     * @param second The second vector
+     * @return The cross product of both vectors
+     */
+    public static Vec3 crossProduct(Vec3 first, Vec3 second) {
+        int cx = (first.getY() * second.getZ()) - (first.getZ() * second.getY());
+        int cy = (first.getZ() * second.getX()) - (first.getX() * second.getZ());
+        int cz = (first.getX() * second.getY()) - (first.getY() * second.getX());
+        return new Vec3(cx, cy, cz);
+    }
+
+    /**
+     * Normalises a signed vector between 0 & 1
+     * https://www.khronos.org/opengl/wiki/Normalized_Integer
+     * @param x The vector
+     * @return The normalised vector as a triplet
+     */
+    public static MutableTriplet<Float, Float, Float> crossProduct(Vec3 x) {
+        float xn = normaliseInteger(x.getX());
+        float yn = normaliseInteger(x.getY());
+        float zn = normaliseInteger(x.getZ());
+        return new MutableTriplet<>(xn, yn, zn);
+    }
+
+    /**
+     * Normalises a signed integer between 0 & 1
+     * https://www.khronos.org/opengl/wiki/Normalized_Integer
+     * @param x The integer to normalise
+     * @return The normalised integer
+     */
+    public static float normaliseInteger(int x) {
+        return (float) Math.max((float)x / (float)Integer.MAX_VALUE, -1.0);
     }
 
     /**
