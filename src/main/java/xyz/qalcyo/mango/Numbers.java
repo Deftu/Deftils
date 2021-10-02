@@ -1,6 +1,8 @@
 package xyz.qalcyo.mango;
 
+import xyz.qalcyo.mango.collections.impl.MutablePair;
 import xyz.qalcyo.mango.collections.impl.MutableTriplet;
+import xyz.qalcyo.mango.data.Vec2;
 import xyz.qalcyo.mango.data.Vec3;
 
 import java.util.Random;
@@ -43,6 +45,18 @@ public class Numbers {
     }
 
     /**
+     * Returns the distance between the two vectors.
+     *
+     * @param first The first vector.
+     * @param second The second vector.
+     * @param zPlane The Z plane in which the Vec2 resides on.
+     * @return The distance between both vectors.
+     */
+    public static double getDistanceBetween(Vec3 first, Vec2 second, int zPlane) {
+        return getDistanceBetween(first, new Vec3(second.getX(), second.getY(), zPlane), false);
+    }
+
+    /**
      * Calculates the dot product between two vectors
      * @param first The first vector
      * @param second The second vector
@@ -50,6 +64,19 @@ public class Numbers {
      */
     public static int dotProduct(Vec3 first, Vec3 second) {
         return (first.getX() * second.getX()) + (first.getY() * second.getY()) + (first.getZ() * second.getZ());
+<<<<<<< Updated upstream
+=======
+    }
+
+    /**
+     * Calculates the dot product between two vectors
+     * @param first The first vector
+     * @param second The second vector
+     * @return The (scalar) dot product of both vectors
+     */
+    public static int dotProduct(Vec2 first, Vec2 second) {
+        return (first.getX() * second.getX()) + (first.getY() * second.getY());
+>>>>>>> Stashed changes
     }
 
     /**
@@ -66,7 +93,7 @@ public class Numbers {
     }
 
     /**
-     * Normalises a signed vector between 0 & 1
+     * Normalises a signed Vec2 between 0 & 1
      * https://www.khronos.org/opengl/wiki/Normalized_Integer
      * @param x The vector
      * @return The normalised vector as a triplet
@@ -79,6 +106,18 @@ public class Numbers {
     }
 
     /**
+     * Normalises a signed Vec3 between 0 & 1
+     * https://www.khronos.org/opengl/wiki/Normalized_Integer
+     * @param x The vector
+     * @return The normalised vector as a pair
+     */
+    public static MutablePair<Float, Float> normaliseVec2(Vec2 x) {
+        float xn = normaliseInteger(x.getX());
+        float yn = normaliseInteger(x.getY());
+        return new MutablePair<>(xn, yn);
+    }
+
+    /**
      * Normalises a signed integer between 0 & 1
      * https://www.khronos.org/opengl/wiki/Normalized_Integer
      * @param x The integer to normalise
@@ -86,6 +125,35 @@ public class Numbers {
      */
     public static float normaliseInteger(int x) {
         return (float) Math.max((float)x / (float)Integer.MAX_VALUE, -1.0);
+    }
+
+    /**
+     * Randomises a Vec3
+     * Can be important for games needing random spawn points and such
+     * @param min The minimum amount to randomise it
+     * @param max The maximum amount to randomise it
+     * @return The randomised Vec3
+     */
+    public static Vec3 randomiseVec3(int max, int min) {
+        return new Vec3(
+            getRandomInteger(max, min),
+            getRandomInteger(max, min),
+            getRandomInteger(max, min)
+        );
+    }
+
+    /**
+     * Randomises a Vec2
+     * Can be important for games needing random spawn points and such
+     * @param min The minimum amount to randomise it
+     * @param max The maximum amount to randomise it
+     * @return The randomised Vec2
+     */
+    public static Vec2 randomiseVec2(int max, int min) {
+        return new Vec2(
+            getRandomInteger(max, min),
+            getRandomInteger(max, min)
+        );
     }
 
     /**
