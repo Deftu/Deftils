@@ -49,7 +49,7 @@ public class Numbers {
      * @return The (scalar) dot product of both vectors
      */
     public static int dotProduct(Vec3 first, Vec3 second) {
-        return (first.getX() * second.getX()) + (first.getY() * second.getY()) + (first.getZ() + second.getZ());
+        return (first.getX() * second.getX()) + (first.getY() * second.getY()) + (first.getZ() * second.getZ());
     }
 
     /**
