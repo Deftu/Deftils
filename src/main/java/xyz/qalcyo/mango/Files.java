@@ -1,5 +1,8 @@
 package xyz.qalcyo.mango;
 
+import xyz.qalcyo.mango.error_handling.Option;
+import xyz.qalcyo.mango.error_handling.Result;
+
 import java.io.*;
 
 public class Files {
@@ -55,6 +58,23 @@ public class Files {
             e.printStackTrace();
             return null;
         }
+    }
+
+    public static Result<String> getFileExtension(String filename) {
+        int i = filename.lastIndexOf('.');
+
+        Result r = new Result();
+
+        if (i == -1) {
+            r.success(false);
+            r.errorMessage("Failed to get extension of file.");
+            return r;
+        }
+
+        r.success(true);
+        r.value(filename.substring(i));
+
+        return r;
     }
 
 }

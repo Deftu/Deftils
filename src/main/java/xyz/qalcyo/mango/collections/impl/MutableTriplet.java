@@ -25,4 +25,10 @@ public class MutableTriplet<X, Y, Z> extends AbstractTriplet<X, Y, Z> {
     public void third(Z third) {
         this.third = third;
     }
+
+    @Override
+    public String toString() {
+        return "(" + first + ", " + second + ", " + third + ")";
+    }
+
 }

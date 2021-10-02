@@ -1,5 +1,7 @@
 package xyz.qalcyo.mango.data;
 
+import xyz.qalcyo.mango.Numbers;
+
 import java.awt.*;
 
 public class Colour {
@@ -110,6 +112,19 @@ public class Colour {
 
     public static Colour of(Color color) {
         return new Colour(color);
+    }
+
+    public static Colour of(Vec3 color) {
+        return new Colour(color.getX(), color.getY(), color.getZ());
+    }
+
+    public static Colour randomColour() {
+        return Colour.of(Numbers.randomiseVec3(255, 0));
+    }
+
+    @Override
+    public String toString() {
+        return "(" + red + ", " + green + ", " + blue + ", " + alpha + ")";
     }
 
 }

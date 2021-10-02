@@ -1,6 +1,7 @@
 package xyz.qalcyo.mango;
 
-import xyz.qalcyo.mango.collections.impl.ImmutableTriplet;
+import xyz.qalcyo.mango.collections.abstraction.AbstractTriplet;
+import xyz.qalcyo.mango.collections.impl.MutableTriplet;
 
 public class Colours {
 
@@ -20,12 +21,12 @@ public class Colours {
      * @param b the blue value
      * @return The normalised colour value
      */
-    public static ImmutableTriplet<Double, Double, Double> rgbToNormalised(int r, int g, int b) {
+    public static MutableTriplet<Double, Double, Double> rgbToNormalised(int r, int g, int b) {
         double red = r / 255.0;
         double green = g / 255.0;
         double blue = b / 255.0;
 
-        return new ImmutableTriplet<>(red, green, blue);
+        return new MutableTriplet<>(red, green, blue);
     }
 
     /**
@@ -34,7 +35,7 @@ public class Colours {
      * @param rgb The red green blue value
      * @return The normalised colour value
      */
-    public static ImmutableTriplet<Double, Double, Double> rgbToNormalised(ImmutableTriplet<Integer, Integer, Integer> rgb) {
+    public static MutableTriplet<Double, Double, Double> rgbToNormalised(AbstractTriplet<Integer, Integer, Integer> rgb) {
         return rgbToNormalised(rgb.first(), rgb.second(), rgb.third());
     }
 }
