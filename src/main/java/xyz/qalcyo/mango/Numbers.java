@@ -64,8 +64,6 @@ public class Numbers {
      */
     public static int dotProduct(Vec3 first, Vec3 second) {
         return (first.getX() * second.getX()) + (first.getY() * second.getY()) + (first.getZ() * second.getZ());
-<<<<<<< Updated upstream
-=======
     }
 
     /**
@@ -76,7 +74,6 @@ public class Numbers {
      */
     public static int dotProduct(Vec2 first, Vec2 second) {
         return (first.getX() * second.getX()) + (first.getY() * second.getY());
->>>>>>> Stashed changes
     }
 
     /**
