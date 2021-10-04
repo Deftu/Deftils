@@ -2,6 +2,7 @@ package xyz.qalcyo.mango;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import xyz.qalcyo.mango.data.Vec3;
 
 public class NumbersTest {
 
@@ -32,6 +33,15 @@ public class NumbersTest {
         System.out.println(Numbers.isPositive(1000000000000000L));
         System.out.println(Numbers.getRandomLong());
         System.out.println(Numbers.getRandomLong(1000000000000000L, 0));
+
+        System.out.println("\nDot product");
+        System.out.println(Numbers.dotProduct(new Vec3(0, 10, 20), new Vec3(10, 0, 20)));
+
+        System.out.println("\nCross product");
+        System.out.println(Numbers.crossProduct(new Vec3(0, 10, 20), new Vec3(10, 0, 20)));
+
+        System.out.println("\nRandom vector");
+        System.out.println(Numbers.randomiseVec3(1000, 0));
     }
 
 }

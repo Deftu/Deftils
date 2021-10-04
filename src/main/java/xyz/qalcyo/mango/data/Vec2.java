@@ -25,4 +25,9 @@ public class Vec2 {
         this.y = y;
     }
 
+    @Override
+    public String toString() {
+        return "(" + x + ", " + y + ")";
+    }
+
 }
