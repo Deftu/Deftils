@@ -1,7 +1,7 @@
 package xyz.qalcyo.mango;
 
 import org.junit.jupiter.api.Test;
-import xyz.qalcyo.mango.error_handling.Result;
+import xyz.qalcyo.mango.exceptions.handling.Result;
 
 public class FilesTests {
 

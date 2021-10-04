@@ -1,6 +1,6 @@
 package xyz.qalcyo.mango;
 
-import xyz.qalcyo.mango.error_handling.Result;
+import xyz.qalcyo.mango.exceptions.handling.Result;
 
 import java.io.*;
 

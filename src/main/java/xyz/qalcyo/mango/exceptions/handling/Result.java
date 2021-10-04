@@ -1,4 +1,4 @@
-package xyz.qalcyo.mango.error_handling;
+package xyz.qalcyo.mango.exceptions.handling;
 
 /**
  * Error handling, utility without using exceptions
