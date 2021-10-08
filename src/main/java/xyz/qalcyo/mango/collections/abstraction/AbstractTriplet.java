@@ -1,20 +1,14 @@
 package xyz.qalcyo.mango.collections.abstraction;
 
-/**
- * An abstract class for triplet values
- * Triplets are useful for things like:
- * Coordinates, colours, etcetera.
- * @param <X>
- * @param <Y>
- * @param <Z>
- */
-public abstract class AbstractTriplet<X, Y, Z> {
+import xyz.qalcyo.mango.collections.Triplet;
 
-    protected X first;
-    protected Y second;
-    protected Z third;
+public abstract class AbstractTriplet<L, M, R> implements Triplet<L, M, R> {
 
-    public AbstractTriplet(X first, Y second, Z third) {
+    protected L first;
+    protected M second;
+    protected R third;
+
+    public AbstractTriplet(L first, M second, R third) {
         this.first = first;
         this.second = second;
         this.third = third;
@@ -24,15 +18,15 @@ public abstract class AbstractTriplet<X, Y, Z> {
         this(null, null, null);
     }
 
-    public X first() {
+    public L left() {
         return first;
     }
 
-    public Y second() {
+    public M middle() {
         return second;
     }
 
-    public Z third() {
+    public R right() {
         return third;
     }
 

@@ -21,9 +21,4 @@ public class MutablePair<L, R> extends AbstractPair<L, R> {
         this.right = right;
     }
 
-    @Override
-    public String toString() {
-        return "(" + left + ", " + right + ")";
-    }
-
 }

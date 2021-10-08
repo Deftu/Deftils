@@ -8,9 +8,4 @@ public class ImmutablePair<L, R> extends AbstractPair<L, R> {
         super(left, right);
     }
 
-    @Override
-    public String toString() {
-        return "[" + left + ", " + right + "]";
-    }
-
 }

@@ -14,21 +14,16 @@ public class MutableTriplet<X, Y, Z> extends AbstractTriplet<X, Y, Z> {
         super();
     }
 
-    public void first(X first) {
+    public void left(X first) {
         this.first = first;
     }
 
-    public void second(Y second) {
+    public void middle(Y second) {
         this.second = second;
     }
 
-    public void third(Z third) {
+    public void right(Z third) {
         this.third = third;
-    }
-
-    @Override
-    public String toString() {
-        return "(" + first + ", " + second + ", " + third + ")";
     }
 
 }

@@ -11,3 +11,6 @@ gradle-app.setting
 *.iml
 *.ipr
 *.iws
+
+# Project
+**/tests

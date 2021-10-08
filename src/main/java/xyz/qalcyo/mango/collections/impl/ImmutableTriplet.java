@@ -10,9 +10,4 @@ public class ImmutableTriplet<X, Y, Z> extends AbstractTriplet<X, Y, Z> {
         this.third = third;
     }
 
-    @Override
-    public String toString() {
-        return "[" + first + ", " + second + ", " + third + "]";
-    }
-
 }
