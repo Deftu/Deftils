@@ -5,7 +5,7 @@
 </div>
 
 ### Latest release
-1.8
+1.0
 
 ## Why should I use it?
 
@@ -20,9 +20,17 @@ Mango's group is `xyz.qalcyo.mango`, it's artifact name is `Mango` and the versi
 
 ### Maven:
 ```xml
+<repositories>
+    <repository>
+        <id>deftu</id>
+        <name>Deftu</name>
+        <url>https://maven.deftu.xyz/repository/maven-public/</url>
+    </repository>
+</repositories>
+
 <dependency>
-    <groupId>xyz.qalcyo.mango</groupId>
-    <artifactId>Mango</artifactId>
+    <groupId>xyz.deftu.deftils</groupId>
+    <artifactId>Deftils</artifactId>
     <version>VERSION</version>
 </dependency>
 ```
@@ -31,12 +39,12 @@ Mango's group is `xyz.qalcyo.mango`, it's artifact name is `Mango` and the versi
 ```gradle
 repositories {
     maven {
-        name = "Qalcyo"
-        url = "http://maven.deftu.xyz/repository/maven-public/"
+        name = "Deftu"
+        url = "https://maven.deftu.xyz/repository/maven-public/"
     }
 }
 
 dependencies {
-    api('xyz.qalcyo.mango:Mango:VERSION')
+    api('xyz.deftu.deftils:Deftils:VERSION')
 }
 ```
