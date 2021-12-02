@@ -1,8 +1,4 @@
-<div align="center">
-
-# Mango - Simple core JVM library.
-
-</div>
+# Deftils - Simple core JVM library.
 
 ### Latest release
 1.0
