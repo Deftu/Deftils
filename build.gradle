@@ -1,6 +1,7 @@
 plugins {
     id 'java-library'
-    id 'org.jetbrains.kotlin.jvm' version '1.5.21'
+    id 'maven-publish'
+    id 'org.jetbrains.kotlin.jvm' version '1.6.0'
 }
 
 group = lib_group
@@ -11,8 +12,8 @@ repositories {
 }
 
 dependencies {
-    testImplementation('org.junit.jupiter:junit-jupiter-api:5.7.2')
-    testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.7.2')
+    testImplementation('org.junit.jupiter:junit-jupiter-api:5.8.1')
+    testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.8.1')
 }
 
 jar {
@@ -21,4 +22,16 @@ jar {
 
 test {
     useJUnitPlatform()
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = lib_group
+            artifactId = lib_name
+            version = lib_version
+
+            from components.java
+        }
+    }
 }
