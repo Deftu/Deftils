@@ -4,6 +4,9 @@
 
 </div>
 
+### Latest release
+1.8
+
 ## Why should I use it?
 
 Mango provides new collection types and utility classes. To put it in short, it's only for your own Quality of Life.
