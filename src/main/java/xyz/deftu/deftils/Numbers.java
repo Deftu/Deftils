@@ -90,7 +90,7 @@ public class Numbers {
     }
 
     /**
-     * Normalises a signed Vec2 between 0 & 1
+     * Normalises a signed Vec2 between 0 and 1
      * https://www.khronos.org/opengl/wiki/Normalized_Integer
      * @param x The vector
      * @return The normalised vector as a triplet
@@ -103,7 +103,7 @@ public class Numbers {
     }
 
     /**
-     * Normalises a signed Vec3 between 0 & 1
+     * Normalises a signed Vec3 between 0 and 1
      * https://www.khronos.org/opengl/wiki/Normalized_Integer
      * @param x The vector
      * @return The normalised vector as a pair
@@ -115,7 +115,7 @@ public class Numbers {
     }
 
     /**
-     * Normalises a signed integer between 0 & 1
+     * Normalises a signed integer between 0 and 1
      * https://www.khronos.org/opengl/wiki/Normalized_Integer
      * @param x The integer to normalise
      * @return The normalised integer

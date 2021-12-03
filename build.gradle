@@ -1,11 +1,12 @@
 plugins {
-    id 'java-library'
+    id 'java'
+    id 'signing'
     id 'maven-publish'
-    id 'org.jetbrains.kotlin.jvm' version '1.6.0'
 }
 
-group = lib_group
-version = lib_version
+group = projectGroup
+version = projectVersion
+archivesBaseName = projectName
 
 repositories {
     mavenCentral()
@@ -16,22 +17,76 @@ dependencies {
     testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.8.1')
 }
 
+publishing {
+    publications {
+        local(MavenPublication) {
+            groupId = projectGroup
+            artifactId = projectName
+            version = projectVersion
+
+            from components.java
+        }
+
+        publish(MavenPublication) {
+            from components.java
+
+            groupId = projectGroup
+            artifactId = projectName
+            version = projectVersion
+
+            pom {
+                name = projectName
+                description = projectDescription
+                url = projectGit
+
+                licenses {
+                    license {
+                        name = 'GNU LESSER GENERAL PUBLIC LICENSE, Version 3'
+                        url = 'https://www.gnu.org/licenses/lgpl-3.0.en.html'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id = "deftu"
+                        name = "Deftu"
+                        email = "deftudev@gmail.com"
+                    }
+                }
+
+                scm {
+                    url = projectGit
+                }
+            }
+        }
+    }
+
+    repositories {
+        maven {
+            name = "MavenCentral"
+            url = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
+            credentials {
+                username = findProperty("publishing.mavencentral.username")
+                password = findProperty("publishing.mavencentral.password")
+            }
+        }
+    }
+}
+
 jar {
     from 'LICENSE'
 }
 
-test {
-    useJUnitPlatform()
+java {
+    withJavadocJar()
+    withSourcesJar()
 }
 
-publishing {
-    publications {
-        maven(MavenPublication) {
-            groupId = lib_group
-            artifactId = lib_name
-            version = lib_version
+artifacts {
+    archives javadocJar, sourcesJar
+}
 
-            from components.java
-        }
-    }
+signing {
+    sign publishing.publications.publish
+    sign configurations.archives
 }

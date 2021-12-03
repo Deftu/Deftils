@@ -14,7 +14,7 @@ public class Colours {
     }
 
     /**
-     * Converts a rgb value to a normalised value (between 0 & 1)
+     * Converts a rgb value to a normalised value (between 0 and 1)
      * Often used in things like OpenGL for colours
      * @param r the red value
      * @param g the green value
@@ -30,7 +30,7 @@ public class Colours {
     }
 
     /**
-     Converts a rgb value to a normalised value (between 0 & 1)
+     Converts a rgb value to a normalised value (between 0 and 1)
      * Often used in things like OpenGL for colours
      * @param rgb The red green blue value
      * @return The normalised colour value

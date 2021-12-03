@@ -1,6 +1,5 @@
 package xyz.deftu.deftils.collections.abstraction;
 
-import org.jetbrains.annotations.NotNull;
 import xyz.deftu.deftils.collections.Heap;
 
 import java.util.ArrayList;
@@ -35,7 +34,6 @@ public abstract class AbstractHeap<T> implements Heap<T> {
         return list;
     }
 
-    @NotNull
     public Iterator<T> iterator() {
         return list.iterator();
     }
