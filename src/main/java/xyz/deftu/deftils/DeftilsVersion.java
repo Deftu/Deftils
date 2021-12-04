@@ -1,8 +1,8 @@
 package xyz.deftu.deftils;
 
-public class MangoVersion {
+public class DeftilsVersion {
 
-    public static final MangoVersion CURRENT = new MangoVersion(1, 1, 0);
+    public static final DeftilsVersion CURRENT = new DeftilsVersion(1, 1, 0);
 
     public final int major;
     public final int minor;
@@ -10,7 +10,7 @@ public class MangoVersion {
 
     public final String version;
 
-    public MangoVersion(int major, int minor, int patch) {
+    public DeftilsVersion(int major, int minor, int patch) {
         this.major = major;
         this.minor = minor;
         this.patch = patch;

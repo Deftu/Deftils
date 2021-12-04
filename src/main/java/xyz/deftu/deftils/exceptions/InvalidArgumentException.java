@@ -1,7 +1,9 @@
 package xyz.deftu.deftils.exceptions;
 
 public class InvalidArgumentException extends RuntimeException {
-    public InvalidArgumentException() {}
+    public InvalidArgumentException() {
+    }
+
     public InvalidArgumentException(String message) {
         super(message);
     }

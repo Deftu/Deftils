@@ -34,6 +34,10 @@ public abstract class AbstractHeap<T> implements Heap<T> {
         return list;
     }
 
+    public T[] asArray() {
+        return (T[]) list.toArray();
+    }
+
     public Iterator<T> iterator() {
         return list.iterator();
     }

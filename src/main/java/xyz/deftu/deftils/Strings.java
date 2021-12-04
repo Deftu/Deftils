@@ -31,8 +31,8 @@ public class Strings {
      * @return Whether the input string contains the check.
      */
     public static boolean containsIgnoreCase(String input, String check) {
-        Objects.notNull(input, "Input");
-        Objects.notNull(check, "Check");
+        Objects.ensureNotNull(input, "Input");
+        Objects.ensureNotNull(check, "Check");
 
         if (check.isEmpty()) {
             return true;
@@ -46,6 +46,34 @@ public class Strings {
         }
 
         return false;
+    }
+
+    /**
+     * @param input The list of strings you'd like to list.
+     * @return All input strings listed grammatically correctly in English.
+     */
+    public static String listGrammatically(List<String> input) {
+        StringBuilder replacement = new StringBuilder();
+        for (String in : input) {
+            int index = input.indexOf(in);
+            boolean first = index == 0;
+            boolean last = index == input.size() - 1;
+            if (!first && !last)
+                replacement.append(", ");
+            if (!first && last)
+                replacement.append(" and ");
+            replacement.append(in);
+        }
+
+        return replacement.toString();
+    }
+
+    /**
+     * @param input The list of strings you'd like to list.
+     * @return All input strings listed grammatically correctly in English.
+     */
+    public static String listGrammatically(String... input) {
+        return listGrammatically(Arrays.asList(input));
     }
 
     /**

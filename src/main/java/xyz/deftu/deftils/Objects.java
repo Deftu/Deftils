@@ -16,13 +16,14 @@ public class Objects {
      * @param o The object to check.
      * @param name The name of the object.
      */
-    public static void notNull(Object o, String name) {
-        if (o == null)
+    public static void ensureNotNull(Object o, String name) {
+        if (o == null) {
             throw new NullPointerException(name + " == null!");
+        }
     }
 
-    public static void notNull(Object o) {
-        notNull(o, "object");
+    public static void ensureNotNull(Object o) {
+        ensureNotNull(o, "Object");
     }
 
 }

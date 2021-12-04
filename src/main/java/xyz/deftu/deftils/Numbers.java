@@ -57,7 +57,8 @@ public class Numbers {
     }
 
     /**
-     * Calculates the dot product between two vectors
+     * Calculates the dot product between two vectors.
+     *
      * @param first The first vector
      * @param second The second vector
      * @return The (scalar) dot product of both vectors
@@ -67,7 +68,8 @@ public class Numbers {
     }
 
     /**
-     * Calculates the dot product between two vectors
+     * Calculates the dot product between two vectors.
+     *
      * @param first The first vector
      * @param second The second vector
      * @return The (scalar) dot product of both vectors
@@ -77,7 +79,8 @@ public class Numbers {
     }
 
     /**
-     * Calculates the cross product between two vectors
+     * Calculates the cross product between two vectors.
+     *
      * @param first The first vector
      * @param second The second vector
      * @return The cross product of both vectors
@@ -90,8 +93,9 @@ public class Numbers {
     }
 
     /**
-     * Normalises a signed Vec2 between 0 and 1
+     * Normalises a signed Vec2 between 0 and 1.
      * https://www.khronos.org/opengl/wiki/Normalized_Integer
+     *
      * @param x The vector
      * @return The normalised vector as a triplet
      */
@@ -103,8 +107,9 @@ public class Numbers {
     }
 
     /**
-     * Normalises a signed Vec3 between 0 and 1
+     * Normalises a signed Vec3 between 0 and 1.
      * https://www.khronos.org/opengl/wiki/Normalized_Integer
+     *
      * @param x The vector
      * @return The normalised vector as a pair
      */
@@ -115,8 +120,9 @@ public class Numbers {
     }
 
     /**
-     * Normalises a signed integer between 0 and 1
+     * Normalises a signed integer between 0 and 1.
      * https://www.khronos.org/opengl/wiki/Normalized_Integer
+     *
      * @param x The integer to normalise
      * @return The normalised integer
      */
@@ -126,7 +132,8 @@ public class Numbers {
 
     /**
      * Randomises a Vec3
-     * Can be important for games needing random spawn points and such
+     * Can be important for games needing random spawn points and such.
+     *
      * @param min The minimum amount to randomise it
      * @param max The maximum amount to randomise it
      * @return The randomised Vec3

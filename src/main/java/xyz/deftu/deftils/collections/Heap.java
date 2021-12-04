@@ -61,5 +61,6 @@ public interface Heap<T> extends Iterable<T> {
     T first();
 
     List<? super T> asList();
+    T[] asArray();
 
 }

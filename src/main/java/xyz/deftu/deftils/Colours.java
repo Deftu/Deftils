@@ -21,7 +21,7 @@ public class Colours {
      * @param b the blue value
      * @return The normalised colour value
      */
-    public static MutableTriplet<Double, Double, Double> rgbToNormalised(int r, int g, int b) {
+    public static MutableTriplet<Double, Double, Double> convertRgbToNormalised(int r, int g, int b) {
         double red = r / 255.0;
         double green = g / 255.0;
         double blue = b / 255.0;
@@ -35,7 +35,7 @@ public class Colours {
      * @param rgb The red green blue value
      * @return The normalised colour value
      */
-    public static MutableTriplet<Double, Double, Double> rgbToNormalised(AbstractTriplet<Integer, Integer, Integer> rgb) {
-        return rgbToNormalised(rgb.first(), rgb.second(), rgb.third());
+    public static MutableTriplet<Double, Double, Double> convertRgbToNormalised(AbstractTriplet<Integer, Integer, Integer> rgb) {
+        return convertRgbToNormalised(rgb.first(), rgb.second(), rgb.third());
     }
 }

@@ -19,24 +19,26 @@ public class StringBuilderWriter extends Writer implements Serializable {
         this.builder = builder != null ? builder : new StringBuilder();
     }
 
-    public Writer append(char value) {
+    public StringBuilderWriter append(char value) {
         builder.append(value);
         return this;
     }
 
-    public Writer append(CharSequence value) {
+    public StringBuilderWriter append(CharSequence value) {
         builder.append(value);
         return this;
     }
 
-    public Writer append(CharSequence value, int start, int end) {
+    public StringBuilderWriter append(CharSequence value, int start, int end) {
         builder.append(value, start, end);
         return this;
     }
 
-    public void close() {}
+    public void close() {
+    }
 
-    public void flush() {}
+    public void flush() {
+    }
 
     public void write(String value) {
         if (value != null) {

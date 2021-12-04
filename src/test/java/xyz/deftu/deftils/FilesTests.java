@@ -1,5 +1,6 @@
 package xyz.deftu.deftils;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -7,23 +8,31 @@ import java.io.File;
 public class FilesTests {
 
     @Test
+    @Disabled
     public void fileExtensionOf_string() {
-        String fileExtension = Files.fileExtensionOf("Test.txt.png");
+        String fileExtension = Files.retrieveFileExtensionOf("Test.txt.png");
         System.out.println(fileExtension);
     }
 
     @Test
-    public void fileExtensionOf_file() throws Exception {
+    @Disabled
+    public void fileExtensionOf_file() {
         File file = new File("tests/text.txt");
         if (!file.exists()) {
-            file.createNewFile();
+            try {
+                file.createNewFile();
+            } catch (Exception e) {
+                e.printStackTrace();
+                return;
+            }
         }
 
-        String fileExtension = Files.fileExtensionOf(file);
+        String fileExtension = Files.retrieveFileExtensionOf(file);
         System.out.println(fileExtension);
     }
 
     @Test
+    @Disabled
     public void ensureExists() {
         File file = new File("tests/text2.txt");
         System.out.println(file.exists());

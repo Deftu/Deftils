@@ -2,7 +2,7 @@ package xyz.deftu.deftils;
 
 public class Classes {
 
-    public static String callerClassName() {
+    public static String retrieveCallerClassName() {
         StackTraceElement[] stElements = Thread.currentThread().getStackTrace();
         for (StackTraceElement element : stElements) {
             if (!element.getClassName().equals(Classes.class.getName()) && element.getClassName().indexOf("java.lang.Thread") != 0) {
@@ -12,7 +12,7 @@ public class Classes {
         return null;
     }
 
-    public static String callerClassSimpleName() {
+    public static String retrieveCallerClassSimpleName() {
         StackTraceElement[] stElements = Thread.currentThread().getStackTrace();
         for (StackTraceElement element : stElements) {
             if (!element.getClassName().equals(Classes.class.getName()) && element.getClassName().indexOf("java.lang.Thread") != 0) {

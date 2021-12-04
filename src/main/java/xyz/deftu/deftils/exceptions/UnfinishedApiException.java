@@ -1,7 +1,9 @@
 package xyz.deftu.deftils.exceptions;
 
 public class UnfinishedApiException extends RuntimeException {
-    public UnfinishedApiException() {}
+    public UnfinishedApiException() {
+    }
+
     public UnfinishedApiException(String message) {
         super(message);
     }

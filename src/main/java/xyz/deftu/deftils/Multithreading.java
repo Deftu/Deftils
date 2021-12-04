@@ -6,7 +6,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class Multithreading {
 
     private static final AtomicInteger threadCount = new AtomicInteger(0);
-    private static final ThreadPoolExecutor executor = new ThreadPoolExecutor(50, 50, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<>(), (r) -> new Thread(r, String.format("Mango Thread %s", threadCount.incrementAndGet())));
+    private static final ThreadPoolExecutor executor = new ThreadPoolExecutor(50, 50, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<>(), (r) -> new Thread(r, String.format("Deftils Thread %s", threadCount.incrementAndGet())));
     private static final ScheduledExecutorService runnableExecutor = new ScheduledThreadPoolExecutor(6);
 
     /**

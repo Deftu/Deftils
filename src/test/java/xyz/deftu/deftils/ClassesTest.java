@@ -6,12 +6,12 @@ public class ClassesTest {
 
     @Test
     public void testClassName() {
-        System.out.println(Classes.callerClassName());
+        System.out.println(Classes.retrieveCallerClassName());
     }
 
     @Test
     public void testClassSimpleName() {
-        System.out.println(Classes.callerClassSimpleName());
+        System.out.println(Classes.retrieveCallerClassSimpleName());
     }
 
 }
