@@ -1,7 +1,7 @@
 # Deftils - Simple core JVM library.
 
 ### Latest release
-1.0
+1.2.0
 
 ## Why should I use it?
 
