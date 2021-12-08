@@ -18,9 +18,9 @@ Deftils' group is `xyz.deftu.deftils`, it's artifact name is `Deftils` and the v
 ```xml
 <repositories>
     <repository>
-        <id>deftu</id>
-        <name>Deftu</name>
-        <url>https://maven.deftu.xyz/repository/maven-public/</url>
+        <id>maven-central-1</id>
+        <name>MavenCentral</name>
+        <url>https://s01.oss.sonatype.org/repositories/releases/</url>
     </repository>
 </repositories>
 
@@ -34,9 +34,9 @@ Deftils' group is `xyz.deftu.deftils`, it's artifact name is `Deftils` and the v
 ### Gradle:
 ```gradle
 repositories {
+    mavenCentral()
     maven {
-        name = "Deftu"
-        url = "https://maven.deftu.xyz/repository/maven-public/"
+        url = "https://s01.oss.sonatype.org/repositories/releases/"
     }
 }
 
