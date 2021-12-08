@@ -87,6 +87,11 @@ artifacts {
 }
 
 signing {
-    sign publishing.publications.publish
-    sign configurations.archives
+    String password = findProperty("signing.password")
+    if (password != null) {
+        sign publishing.publications.publish
+        sign configurations.archives
+    } else {
+        System.out.println("Signing is unavailable.")
+    }
 }
