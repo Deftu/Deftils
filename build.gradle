@@ -86,6 +86,10 @@ artifacts {
     archives javadocJar, sourcesJar
 }
 
+test {
+    useJUnitPlatform()
+}
+
 signing {
     String password = findProperty("signing.password")
     if (password != null) {
