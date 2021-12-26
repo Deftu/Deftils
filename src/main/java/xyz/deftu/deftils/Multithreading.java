@@ -6,7 +6,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class Multithreading {
 
     private static final AtomicInteger threadCount = new AtomicInteger(0);
-    private static final ThreadPoolExecutor executor = new ThreadPoolExecutor(50, 50, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<>(), (r) -> new Thread(r, String.format("Deftils Thread %s", threadCount.incrementAndGet())));
+    private static final ThreadPoolExecutor executor = new ThreadPoolExecutor(50, 50, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<>(), (r) -> new Thread(r, String.format("Deftils Thread %s", threadCount.getAndIncrement())));
     private static final ScheduledExecutorService runnableExecutor = new ScheduledThreadPoolExecutor(6);
 
     /**
@@ -40,6 +40,20 @@ public class Multithreading {
      */
     public static Future<?> submit(Runnable runnable) {
         return executor.submit(runnable);
+    }
+
+    /**
+     * @return The thread executor Deftils uses for asynchronous running.
+     */
+    public static ThreadPoolExecutor getExecutor() {
+        return executor;
+    }
+
+    /**
+     * @return The executor service used by Deftils for scheduled actions.
+     */
+    public static ScheduledExecutorService getRunnableExecutor() {
+        return runnableExecutor;
     }
 
 }
