@@ -6,15 +6,18 @@ Simple core JVM library.
 </div>
     
 ## Latest release
-1.2.0
+2.0.0
 
 ## Why should I use it?
-
-Deftils provides new collection types and utility classes. To put it in short, it's only for your own Quality of Life.
+Deftils provides new collection types
+and utility classes. To put it in short,
+it's only for your own Quality of Life.
 
 ## How long until deprecated objects will be removed?
-
-Once a class or method has been deprecated, a label will be added indicating when it was deprecated in the version timeline. The feature will most likely be removed within the next 3-5 updates.
+Once a class or method has been deprecated,
+a label will be added indicating when it was
+deprecated in the version timeline. The feature
+will most likely be removed within the next 3-5 updates.
 
 ## Adding Deftils to your project.
 Deftils' group is `xyz.deftu.deftils`, it's artifact name is `Deftils` and the version can be found at the top of this document.
@@ -51,7 +54,7 @@ repositories {
 }
 
 dependencies {
-    api('xyz.deftu.deftils:Deftils:VERSION')
+    api("xyz.deftu.deftils:Deftils:VERSION")
 }
 ```
 </details>

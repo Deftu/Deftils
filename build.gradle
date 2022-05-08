@@ -1,7 +1,7 @@
 plugins {
-    id 'java'
-    id 'signing'
-    id 'maven-publish'
+    id("java-library")
+    id("signing")
+    id("maven-publish")
 }
 
 group = projectGroup
@@ -13,68 +13,12 @@ repositories {
 }
 
 dependencies {
-    testImplementation('org.junit.jupiter:junit-jupiter-api:5.8.1')
-    testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.8.1')
-}
-
-publishing {
-    publications {
-        local(MavenPublication) {
-            groupId = projectGroup
-            artifactId = projectName
-            version = projectVersion
-
-            from components.java
-        }
-
-        publish(MavenPublication) {
-            from components.java
-
-            groupId = projectGroup
-            artifactId = projectName
-            version = projectVersion
-
-            pom {
-                name = projectName
-                description = projectDescription
-                url = projectGit
-
-                licenses {
-                    license {
-                        name = 'GNU LESSER GENERAL PUBLIC LICENSE, Version 3'
-                        url = 'https://www.gnu.org/licenses/lgpl-3.0.en.html'
-                    }
-                }
-
-                developers {
-                    developer {
-                        id = "deftu"
-                        name = "Deftu"
-                        email = "deftudev@gmail.com"
-                    }
-                }
-
-                scm {
-                    url = projectGit
-                }
-            }
-        }
-    }
-
-    repositories {
-        maven {
-            name = "MavenCentral"
-            url = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
-            credentials {
-                username = findProperty("publishing.mavencentral.username")
-                password = findProperty("publishing.mavencentral.password")
-            }
-        }
-    }
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.2")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.2")
 }
 
 jar {
-    from 'LICENSE'
+    from("LICENSE")
 }
 
 java {
@@ -83,19 +27,67 @@ java {
 }
 
 artifacts {
-    archives javadocJar, sourcesJar
+    archives(javadocJar, sourcesJar)
 }
 
 test {
     useJUnitPlatform()
 }
 
-signing {
-    String password = findProperty("signing.password")
-    if (password != null) {
-        sign publishing.publications.publish
-        sign configurations.archives
-    } else {
-        System.out.println("Signing is unavailable.")
+afterEvaluate {
+    publishing {
+        publications {
+            mavenJava(MavenPublication) {
+                groupId = projectGroup
+                artifactId = projectName
+                version = projectVersion
+                from(components["java"])
+
+                pom {
+                    name = projectName
+                    description = projectDescription
+                    url = projectGit
+
+                    licenses {
+                        license {
+                            name = "GNU LESSER GENERAL PUBLIC LICENSE, Version 3"
+                            url = "https://www.gnu.org/licenses/lgpl-3.0.en.html"
+                        }
+                    }
+
+                    developers {
+                        developer {
+                            id = "deftu"
+                            name = "Deftu"
+                            email = "deftudev@gmail.com"
+                        }
+                    }
+
+                    scm {
+                        url = projectGit
+                    }
+                }
+            }
+        }
+
+        if (project.hasProperty("publishing.username") && project.hasProperty("publishing.password")) {
+            repositories {
+                maven {
+                    name = "MavenCentral"
+                    url = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
+                    credentials {
+                        username = findProperty("publishing.username")
+                        password = findProperty("publishing.password")
+                    }
+                }
+            }
+        }
+    }
+
+    if (project.hasProperty("signing.password")) {
+        signing {
+            sign(publishing.publications.mavenJava)
+            sign(configurations.archives)
+        }
     }
 }
