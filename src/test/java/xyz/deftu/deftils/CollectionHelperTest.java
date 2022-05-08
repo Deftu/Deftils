@@ -1,8 +1,6 @@
 package xyz.deftu.deftils;
 
 import org.junit.jupiter.api.Test;
-import xyz.deftu.deftils.collections.impl.ArrayListMultiMap;
-import xyz.deftu.deftils.collections.MultiMap;
 
 public class CollectionHelperTest {
 
