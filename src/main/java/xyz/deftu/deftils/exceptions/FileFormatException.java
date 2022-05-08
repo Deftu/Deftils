@@ -1,6 +1,6 @@
 package xyz.deftu.deftils.exceptions;
 
-public class FileFormatException extends RuntimeException {
+public class FileFormatException extends Exception {
     public FileFormatException() {
     }
 

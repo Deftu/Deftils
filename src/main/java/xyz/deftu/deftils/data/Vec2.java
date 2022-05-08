@@ -1,7 +1,6 @@
 package xyz.deftu.deftils.data;
 
 public class Vec2 {
-
     private int x, y;
 
     public Vec2(int x, int y) {
@@ -29,5 +28,4 @@ public class Vec2 {
     public String toString() {
         return "(" + x + ", " + y + ")";
     }
-
 }

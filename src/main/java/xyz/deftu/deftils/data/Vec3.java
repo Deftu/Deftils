@@ -1,7 +1,6 @@
 package xyz.deftu.deftils.data;
 
 public class Vec3 {
-
     private int x, y, z;
 
     public Vec3(int x, int y, int z) {

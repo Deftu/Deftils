@@ -5,8 +5,7 @@ import xyz.deftu.deftils.collections.impl.MutableTriplet;
 
 import java.awt.*;
 
-public class Colours {
-
+public class ColorHelper {
     /**
      * @param colour The RGB colour to get from.
      * @return The alpha of the colour provided.
@@ -22,7 +21,7 @@ public class Colours {
      */
     public static String toHex(int colour) {
         StringBuilder hex = new StringBuilder(Integer.toHexString(colour & 0xffffff));
-        while(hex.length() < 6)
+        while (hex.length() < 6)
             hex.insert(0, "0");
         return hex.toString();
     }

@@ -1,6 +1,6 @@
 package xyz.deftu.deftils.collections.abstraction;
 
-import xyz.deftu.deftils.Maps;
+import xyz.deftu.deftils.CollectionHelper;
 import xyz.deftu.deftils.annotations.Beta;
 import xyz.deftu.deftils.collections.MultiMap;
 
@@ -10,7 +10,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 @Beta
 public abstract class AbstractMultiMap<K, V> implements MultiMap<K, V> {
 
-    protected final Map<K, List<V>> map = Maps.newHashMap();
+    protected final Map<K, List<V>> map = CollectionHelper.newHashMap();
     protected final Class<?> listType;
 
     public AbstractMultiMap(Class<?> listType) {

@@ -7,8 +7,8 @@ import xyz.deftu.deftils.data.Vec3;
 
 import java.util.Random;
 
-public class Numbers {
-
+@SuppressWarnings("unused")
+public class MathHelper {
     private static final Random random = new Random();
 
     /**
@@ -94,7 +94,7 @@ public class Numbers {
 
     /**
      * Normalises a signed Vec2 between 0 and 1.
-     * https://www.khronos.org/opengl/wiki/Normalized_Integer
+     * <a href="https://www.khronos.org/opengl/wiki/Normalized_Integer">https://www.khronos.org/opengl/wiki/Normalized_Integer</a>
      *
      * @param x The vector
      * @return The normalised vector as a triplet
@@ -108,7 +108,7 @@ public class Numbers {
 
     /**
      * Normalises a signed Vec3 between 0 and 1.
-     * https://www.khronos.org/opengl/wiki/Normalized_Integer
+     * <a href="https://www.khronos.org/opengl/wiki/Normalized_Integer">https://www.khronos.org/opengl/wiki/Normalized_Integer</a>
      *
      * @param x The vector
      * @return The normalised vector as a pair
@@ -121,13 +121,13 @@ public class Numbers {
 
     /**
      * Normalises a signed integer between 0 and 1.
-     * https://www.khronos.org/opengl/wiki/Normalized_Integer
+     * <a href="https://www.khronos.org/opengl/wiki/Normalized_Integer">https://www.khronos.org/opengl/wiki/Normalized_Integer</a>
      *
      * @param x The integer to normalise
      * @return The normalised integer
      */
     public static float normaliseInteger(int x) {
-        return (float) Math.max((float)x / (float)Integer.MAX_VALUE, -1.0);
+        return (float) java.lang.Math.max((float)x / (float)Integer.MAX_VALUE, -1.0);
     }
 
     /**
@@ -222,70 +222,6 @@ public class Numbers {
      */
     public static long getRandomLong(long max, long min) {
         return min + random.nextLong() * (max - min);
-    }
-
-    /**
-     * @param number The integer to check.
-     * @return Whether the integer is positive.
-     */
-    public static boolean isPositive(int number) {
-        return number >= 0;
-    }
-
-    /**
-     * @param number The integer to check.
-     * @return Whether the integer is positive.
-     */
-    public static boolean isPositive(float number) {
-        return number >= 0;
-    }
-
-    /**
-     * @param number The integer to check.
-     * @return Whether the integer is positive.
-     */
-    public static boolean isPositive(double number) {
-        return number >= 0;
-    }
-
-    /**
-     * @param number The integer to check.
-     * @return Whether the integer is positive.
-     */
-    public static boolean isPositive(long number) {
-        return number >= 0;
-    }
-
-    /**
-     * @param number The integer to check.
-     * @return Whether the integer is negative.
-     */
-    public static boolean isNegative(int number) {
-        return number < 0;
-    }
-
-    /**
-     * @param number The integer to check.
-     * @return Whether the integer is negative.
-     */
-    public static boolean isNegative(float number) {
-        return number < 0;
-    }
-
-    /**
-     * @param number The integer to check.
-     * @return Whether the integer is negative.
-     */
-    public static boolean isNegative(double number) {
-        return number < 0;
-    }
-
-    /**
-     * @param number The integer to check.
-     * @return Whether the integer is negative.
-     */
-    public static boolean isNegative(long number) {
-        return number < 0;
     }
 
     public static Random getRandom() {
